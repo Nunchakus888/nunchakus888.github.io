@@ -1,0 +1,42 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge, chrome=1"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta name="keywords" content="Javascript,Nunchakus,Tricking,Kufu,Roidder"><link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css"><link rel="stylesheet" href="/css/index.css"><link rel="icon" href="/images/favicon.ico"><link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css"><title>Transition vs Animations</title><meta name="keywords" content="CSS"><body><div class="container"><div class="nav"><ul><li class="item"><a href="/">🙄️</a></li><li class="item"><a href="/archives">一篇诗</a></li><li class="item"><a href="/category">一壶酒</a></li><li class="item"><a href="/tags/">一曲长歌</a></li><li class="item"><a href="/about/">一剑天涯</a></li></ul></div><article><header><h1 class="title">Transition vs Animations</h1><i class="icon-calendar"></i><span>2018.01.15 | 21:16:00</span></header><div class="content"><hr>
+<h1 id="1-Transition"><a href="#1-Transition" class="headerlink" title="1.Transition"></a>1.Transition</h1><blockquote>
+<p>元素就在那，动画过渡，怎么加，给哪加？</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">img&#123;</span><br><span class="line">    height:15px;</span><br><span class="line">    width:15px;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">img:hover&#123;</span><br><span class="line">    height: 450px;</span><br><span class="line">    width: 450px;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">img&#123;</span><br><span class="line">    transition: 1s; // transition指定状态变化所需要的时间。</span><br><span class="line">    transition: 1s height; // transition只适用于height，width依然是瞬现，效果谁试谁知道</span><br><span class="line">    transition: 1s height, 1s width;</span><br><span class="line">    transition: 1s height, 1s 1s width; // 为width指定一个delay参数,1s后开始变化，delay指定了动画发生的顺序</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>transition的状态变化速度（又称timing function），默认不是匀速的，而是逐渐放慢，这叫做ease。</li>
+<li>linear：匀速</li>
+<li>ease-in：加速</li>
+<li>ease-out：减速</li>
+<li>cubic-bezier函数：自定义速度模式<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">img&#123;</span><br><span class="line">    transition: 1s ease;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">// 完整写法如下：</span><br><span class="line">transition: 1s 1s height ease;</span><br><span class="line"></span><br><span class="line">// 各个属性：</span><br><span class="line">transition-duration: 1s;</span><br><span class="line">transition-delay: 1s;</span><br><span class="line">transition-property: height;</span><br><span class="line">transition-timing-function: ease;</span><br></pre></td></tr></table></figure>
+<h3 id="transition的局限"><a href="#transition的局限" class="headerlink" title="transition的局限"></a>transition的局限</h3><ul>
+<li><p>（1）transition需要事件触发，所以没法在网页加载时自动发生。</p>
+</li>
+<li><p>（2）transition是一次性的，不能重复发生，除非一再触发。</p>
+</li>
+<li><p>（3）transition只能定义开始状态和结束状态，不能定义中间状态，也就是说只有两个状态。</p>
+</li>
+<li><p>（4）一条transition规则，只能定义一个属性的变化，不能涉及多个属性。</p>
+</li>
+</ul>
+<h1 id="2-Animation"><a href="#2-Animation" class="headerlink" title="2.Animation"></a>2.Animation</h1><blockquote>
+<p>Animation需要指定动画一个周期持续的时间，以及动画效果的名称。</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">img5:hover &#123;</span><br><span class="line">    animation: 1s rainbow;</span><br><span class="line">    // 当鼠标悬停在元素上时，会产生名为rainbow的动画效果，持续时间为1秒。为此，我们还需要用keyframes关键字，定义rainbow效果。</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">@keyframes rainbow &#123;</span><br><span class="line">  0% &#123; background: #c00; &#125;</span><br><span class="line">  50% &#123; background: orange; &#125;</span><br><span class="line">  100% &#123; background: yellowgreen; &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">     animation: 1s rainbow infinite; // 默认情况下，动画只播放一次。加入infinite关键字，可以让动画无限次播放。</span><br><span class="line">     animation: 1s rainbow 3; // 也可以指定动画具体播放的次数，比如3次。</span><br><span class="line">     animation: 1s rainbow forwards; // 动画结束以后，会立即从结束状态跳回到起始状态。如果想让动画保持在结束状态，需要使用animation-fill-mode属性。</span><br></pre></td></tr></table></figure>
+<p>然后我就这样粗暴的实现了一个活塞运动</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">.icon &#123;</span><br><span class="line">  animation: .5s rainbow infinite;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">@keyframes rainbow &#123;</span><br><span class="line">  0% &#123; width: 5px; &#125;</span><br><span class="line">  50% &#123;  width: 15px; &#125;</span><br><span class="line">  100% &#123;  width: 0; &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>DEMO地址：<a href="https://codepen.io/Nunchakus/pen/dJjwxG" target="_blank" rel="noopener">codepen</a></p>
+</div></article><div id="disqus_thread"></div><script>var disqus_config = function () {
+  this.page.url = "https://nunchakus888.github.io/2018/01/15/IT-2018-2018-01-15-CSS动画那些玩意儿/";
+  this.page.identifier = "2018/01/15/IT-2018-2018-01-15-CSS动画那些玩意儿/";
+};
+
+(function () {
+  var d = document, s = d.createElement('script');
+  s.src = 'https://Roidder.disqus.com/embed.js';
+  s.setAttribute('data-timestamp', +new Date());
+  (d.head || d.body).appendChild(s);
+})();</script></div></body></head></html>

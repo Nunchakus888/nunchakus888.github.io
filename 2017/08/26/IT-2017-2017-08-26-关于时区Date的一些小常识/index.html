@@ -1,0 +1,24 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge, chrome=1"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta name="keywords" content="Javascript,Nunchakus,Tricking,Kufu,Roidder"><link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css"><link rel="stylesheet" href="/css/index.css"><link rel="icon" href="/images/favicon.ico"><link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css"><title>关于时区 UTC vs CST</title><meta name="keywords" content="JS"><body><div class="container"><div class="nav"><ul><li class="item"><a href="/">🙄️</a></li><li class="item"><a href="/archives">一篇诗</a></li><li class="item"><a href="/category">一壶酒</a></li><li class="item"><a href="/tags/">一曲长歌</a></li><li class="item"><a href="/about/">一剑天涯</a></li></ul></div><article><header><h1 class="title">关于时区 UTC vs CST</h1><i class="icon-calendar"></i><span>2017.08.26 | 17:10:10</span></header><div class="content"><hr>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">new Date(a).toJSON().replace(&apos;T&apos;, &apos; &apos;).split(&apos;.&apos;)[0] //&quot;2017-08-26 22:48:59&quot;</span><br><span class="line"></span><br><span class="line">new Date(a.replace(&apos;CST&apos;, &apos;UTC&apos;)).toJSON().replace(&apos;T&apos;, &apos; &apos;).split(&apos;.&apos;)[0] //&quot;2017-08-26 16:48:59&quot;</span><br></pre></td></tr></table></figure>
+<p>UTC VS CST 相差6个小时.</p>
+<blockquote>
+<p>格林威治标准时间GMT<br>        十七世纪，格林威治皇家天文台为了海上霸权的扩张计画而进行天体观测。1675年旧皇家观测所(Old Royal Observatory) 正式成立，到了1884年决定以通过格林威治的子午线作为划分地球东西两半球的经度零度。观测所门口墙上有一个标志24小时的时钟，显示当下的时间，对全球而言，这里所设定的时间是世界时间参考点，全球都以格林威治的时间作为标准来设定时间，这就是我们耳熟能详的「格林威治标准时间」(Greenwich Mean Time，简称G.M.T.)的由来，标示在手表上，则代表此表具有两地时间功能，也就是同时可以显示原居地和另一个国度的时间。</p>
+</blockquote>
+<blockquote>
+<p>世界协调时间UTC<br>        多数的两地时间表都以GMT来表示，但也有些两地时间表上看不到GMT字样，出现的反而是UTC这3个英文字母，究竟何谓UTC？事实上，UTC指的是Coordinated Universal Time－ 世界协调时间（又称世界标准时间、世界统一时间），是经过平均太阳时(以格林威治时间GMT为准)、地轴运动修正后的新时标以及以「秒」为单位的国际原子时所综合精算而成的时间，计算过程相当严谨精密，因此若以「世界标准时间」的角度来说，UTC比GMT来得更加精准。其误差值必须保持在0.9秒以内，若大于0.9秒则由位于巴黎的国际地球自转事务中央局发布闰秒，使UTC与地球自转周期一致。所以基本上UTC的本质强调的是比GMT更为精确的世界时间标准，不过对于现行表款来说，GMT与UTC的功能与精确度是没有差别的。</p>
+</blockquote>
+<blockquote>
+<p>夏日节约时间DST<br>        所谓「夏日节约时间」Daylight Saving Time（简称D.S.T.），是指在夏天太阳升起的比较早时，将时钟拨快一小时，以提早日光的使用，在英国则称为夏令时间(Summer Time)。这个构想于1784年由美国班杰明·富兰克林提出来，1915年德国成为第一个正式实施夏令日光节约时间的国家，以削减灯光照明和耗电开支。自此以后，全球以欧洲和北美为主的约70个国家都引用这个做法。目前被划分成两个时区的印度也正在商讨是否全国该统一实行夏令日光节约时间。欧洲手机上也有很多GSM系统的基地台，除了会传送当地时间外也包括夏令日光节约时间，做为手机的时间标准，使用者可以自行决定要开启或关闭。值得注意的是，某些国家有实施「夏日节约时间」的制度，出国时别忘了跟随当地习惯在表上调整一下，这可是机械表没有的功能设计哦！</p>
+</blockquote>
+<p>我们用的是CST，怎么知道的呢？<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">new Date() //Sat Aug 26 2017 16:39:46 GMT+0800 (CST)</span><br></pre></td></tr></table></figure></p>
+</div></article><div id="disqus_thread"></div><script>var disqus_config = function () {
+  this.page.url = "https://nunchakus888.github.io/2017/08/26/IT-2017-2017-08-26-关于时区Date的一些小常识/";
+  this.page.identifier = "2017/08/26/IT-2017-2017-08-26-关于时区Date的一些小常识/";
+};
+
+(function () {
+  var d = document, s = d.createElement('script');
+  s.src = 'https://Roidder.disqus.com/embed.js';
+  s.setAttribute('data-timestamp', +new Date());
+  (d.head || d.body).appendChild(s);
+})();</script></div></body></head></html>

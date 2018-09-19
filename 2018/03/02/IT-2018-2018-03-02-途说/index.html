@@ -1,0 +1,24 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge, chrome=1"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta name="keywords" content="Javascript,Nunchakus,Tricking,Kufu,Roidder"><link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css"><link rel="stylesheet" href="/css/index.css"><link rel="icon" href="/images/favicon.ico"><link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css"><title>道听..</title><body><div class="container"><div class="nav"><ul><li class="item"><a href="/">🙄️</a></li><li class="item"><a href="/archives">一篇诗</a></li><li class="item"><a href="/category">一壶酒</a></li><li class="item"><a href="/tags/">一曲长歌</a></li><li class="item"><a href="/about/">一剑天涯</a></li></ul></div><article><header><h1 class="title">道听..</h1><i class="icon-calendar"></i><span>2018.03.02 | 17:52:00</span></header><div class="content"><hr>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">for(var i = 0; i &lt; 5; i++) &#123;</span><br><span class="line">    setTimeout(function() &#123;</span><br><span class="line">        console.log(i);</span><br><span class="line">    &#125;,1000)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">for(let i = 0; i &lt; 5; i++) &#123;</span><br><span class="line">    setTimeout(function() &#123;</span><br><span class="line">        console.log(i);</span><br><span class="line">    &#125;,1000)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>这是<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Statements/let" target="_blank" rel="noopener">mozilla</a>给的解释：<br>  Variables declared by let have as their scope the block in which they are defined, as well as in any contained sub-blocks. In this way, let works very much like var. The main difference is that the scope of a var variable is the entire enclosing function:</p>
+<blockquote>
+<p>大体意思就是：用var声明变量作用域是整个封闭函数，而let只是当前块。所以就解释了 5 * 5 VS 0 1 2 3 4 这种现象？<br>  反正我觉得扯淡。。。</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<p>四处查看文档<br>    <em>let can also be used to avoid problems with closures. It binds fresh value rather than keeping an old reference as shown in examples below.</em><br>总算可以说服，然后总结下自己的理解：<br>其实mozilla不装逼的话就要说完整了。并不是所有人都如它想的聪慧过人呐。</p>
+</blockquote>
+<p>var声明i的话，会在<code>整个函数作用域</code>存在，即loop 5次，传的i是同一个reference.<br>let 作用域只限当前块，每次循环i都是一个新的reference.</p>
+</div></article><div id="disqus_thread"></div><script>var disqus_config = function () {
+  this.page.url = "https://nunchakus888.github.io/2018/03/02/IT-2018-2018-03-02-途说/";
+  this.page.identifier = "2018/03/02/IT-2018-2018-03-02-途说/";
+};
+
+(function () {
+  var d = document, s = d.createElement('script');
+  s.src = 'https://Roidder.disqus.com/embed.js';
+  s.setAttribute('data-timestamp', +new Date());
+  (d.head || d.body).appendChild(s);
+})();</script></div></body></head></html>

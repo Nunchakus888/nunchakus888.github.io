@@ -1,0 +1,36 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge, chrome=1"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta name="keywords" content="Javascript,Nunchakus,Tricking,Kufu,Roidder"><link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css"><link rel="stylesheet" href="/css/index.css"><link rel="icon" href="/images/favicon.ico"><link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css"><title>Terminal折腾记...</title><meta name="keywords" content="mac"><body><div class="container"><div class="nav"><ul><li class="item"><a href="/">🙄️</a></li><li class="item"><a href="/archives">一篇诗</a></li><li class="item"><a href="/category">一壶酒</a></li><li class="item"><a href="/tags/">一曲长歌</a></li><li class="item"><a href="/about/">一剑天涯</a></li></ul></div><article><header><h1 class="title">Terminal折腾记...</h1><i class="icon-calendar"></i><span>2017.06.28 | 00:00:00</span></header><div class="content"><hr>
+<h3 id="Terminal折腾记"><a href="#Terminal折腾记" class="headerlink" title="Terminal折腾记"></a>Terminal折腾记</h3><p>重度 <code>windows cmd</code>依赖用户，切到Mac上来百般不适。。。注定是一条无休止的折腾路。。那就来吧，前面走过的坑坑洼洼走一次就行了，往后简单粗暴，copy即可！</p>
+<ul>
+<li>终端文件名tab补全(⚠️无需插件，缺点是git分支名不能tab补全)：<ul>
+<li>配置tab自动补全功能，需要用root用户权限，我们先启动root权限：</li>
+<li>偏好设置–&gt; 用户与群组–&gt; 解锁 –&gt; 网络账户服务器–&gt; 加入–&gt; 打开目录使用工具–&gt; 解锁设置root权限–&gt;上锁退出</li>
+<li>打开终端：  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">1.su root 然后登录</span><br><span class="line">2.输入 nano .inputrc</span><br><span class="line">3.输入内容：</span><br><span class="line">set completion-ignore-case on  </span><br><span class="line">set show-all-if-ambiguous on  </span><br><span class="line">TAB:menu-complete  </span><br><span class="line">4.ctru + o </span><br><span class="line">5.可以再新开个终端试试tab是否生效</span><br><span class="line">6.End.</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><p>终端主题&amp;git分支名自动补全（⚠️插件版，可定制各种炫酷主题）</p>
+<ul>
+<li><p>install <br><br>  <code>sh -c &quot;$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)&quot;</code></p>
+</li>
+<li><p>theme <br><br>  <code>nano ~/.zshrc</code> <br><br>  编辑ZSH_THEME=<code>&quot;robbyrussell&quot;</code><br>  <a href="https://github.com/robbyrussell/oh-my-zsh/wiki/Themes" target="_blank" rel="noopener">示例</a></p>
+</li>
+<li><p><a href="https://github.com/robbyrussell/oh-my-zsh/blob/master/README.md" target="_blank" rel="noopener">oh-my-zsh</a></p>
+</li>
+</ul>
+</li>
+<li><p>最后上个效果图િ🙄ી<br>  <img src="https://raw.githubusercontent.com/Nunchakus888/_draft/master/source/assets/terminal.png" alt=""></p>
+</li>
+</ul>
+<h4 id="关于终端折腾是一不归路，走不到头。以上配置，可以满足绝大多数场景的高效coding了，所以我们本着时间精力花费的最大性价比化，爱装逼，不求无敌！"><a href="#关于终端折腾是一不归路，走不到头。以上配置，可以满足绝大多数场景的高效coding了，所以我们本着时间精力花费的最大性价比化，爱装逼，不求无敌！" class="headerlink" title="关于终端折腾是一不归路，走不到头。以上配置，可以满足绝大多数场景的高效coding了，所以我们本着时间精力花费的最大性价比化，爱装逼，不求无敌！"></a>关于终端折腾是一不归路，走不到头。以上配置，可以满足绝大多数场景的高效coding了，所以我们本着时间精力花费的最大性价比化，爱装逼，不求无敌！</h4></div></article><div id="disqus_thread"></div><script>var disqus_config = function () {
+  this.page.url = "https://nunchakus888.github.io/2017/06/28/IT-Mac-2017-06-28-terminal折腾记/";
+  this.page.identifier = "2017/06/28/IT-Mac-2017-06-28-terminal折腾记/";
+};
+
+(function () {
+  var d = document, s = d.createElement('script');
+  s.src = 'https://Roidder.disqus.com/embed.js';
+  s.setAttribute('data-timestamp', +new Date());
+  (d.head || d.body).appendChild(s);
+})();</script></div></body></head></html>

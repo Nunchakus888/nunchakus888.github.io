@@ -1,0 +1,27 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge, chrome=1"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta name="keywords" content="Javascript,Nunchakus,Tricking,Kufu,Roidder"><link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css"><link rel="stylesheet" href="/css/index.css"><link rel="icon" href="/images/favicon.ico"><link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css"><title>CommonJS vs ES6 Module.</title><meta name="keywords" content="JS"><body><div class="container"><div class="nav"><ul><li class="item"><a href="/">🙄️</a></li><li class="item"><a href="/archives">一篇诗</a></li><li class="item"><a href="/category">一壶酒</a></li><li class="item"><a href="/tags/">一曲长歌</a></li><li class="item"><a href="/about/">一剑天涯</a></li></ul></div><article><header><h1 class="title">CommonJS vs ES6 Module.</h1><i class="icon-calendar"></i><span>2016.08.12 | 01:08:08</span></header><div class="content"><h1 id="Module"><a href="#Module" class="headerlink" title="Module"></a>Module</h1><h2 id="CommonJS-是以在浏览器环境之外构建-JavaScript-生态系统为目标而产生的项目，比如在服务器和桌面环境中。"><a href="#CommonJS-是以在浏览器环境之外构建-JavaScript-生态系统为目标而产生的项目，比如在服务器和桌面环境中。" class="headerlink" title="CommonJS 是以在浏览器环境之外构建 JavaScript 生态系统为目标而产生的项目，比如在服务器和桌面环境中。"></a>CommonJS 是以在浏览器环境之外构建 JavaScript 生态系统为目标而产生的项目，比如在服务器和桌面环境中。</h2><ul>
+<li><p>CommonJS 规范是为了解决js的作用域问题而定义的模块形式，可以使每个模块它自身的命名空间中执行，该规范的主要内容是：</p>
+<ul>
+<li><code>模块必须通过module.exports到处对外的变量或借口</code>，通过require（）来倒入其他模块的输出到当前模块作用域中。</li>
+<li><code>CommonJs</code>是同步加载模块，也有浏览器端的实现，其远离是将所有的模块都定义好，并通过ID索引，然后在浏览器环境中解析。</li>
+</ul>
+</li>
+<li><p>ES6 模块的设计思想，<code>是尽量的静态化</code>，使得编译时就能确定模块的依赖关系，以及输入和输出的变量。<br><code>CommonJS 和 AMD 模块，都只能在运行时确定这些东西</code>。<br>比如，CommonJS 模块就是对象，输入时必须查找对象属性。<br>ES6 “编译时加载”或者静态加载，即可以在编译时就完成模块加载，效率要比 CommonJS 模块的加载方式高。</p>
+<ul>
+<li><p><code>ES6 的模块自动采用严格模式</code>，不管你有没有在模块头部加上”use strict”;</p>
+</li>
+<li><p><code>import语句是 Singleton 模式。</code><br>import()函数可以用在任何地方，不仅仅是模块，非模块的脚本也可以使用。<br>它是运行时执行，也就是说，什么时候运行到这一句，也会加载指定的模块。<br>另外，import()函数与所加载的模块没有静态连接关系，这点也是与import语句不相同。<br>import()类似于 Node 的require方法，区别主要是前者是异步加载，后者是同步加载。</p>
+</li>
+</ul>
+</li>
+</ul>
+</div></article><div id="disqus_thread"></div><script>var disqus_config = function () {
+  this.page.url = "https://nunchakus888.github.io/2016/08/12/IT-2016-2016-08-12-module/";
+  this.page.identifier = "2016/08/12/IT-2016-2016-08-12-module/";
+};
+
+(function () {
+  var d = document, s = d.createElement('script');
+  s.src = 'https://Roidder.disqus.com/embed.js';
+  s.setAttribute('data-timestamp', +new Date());
+  (d.head || d.body).appendChild(s);
+})();</script></div></body></head></html>

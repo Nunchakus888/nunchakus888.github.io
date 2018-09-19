@@ -1,0 +1,37 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge, chrome=1"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta name="keywords" content="Javascript,Nunchakus,Tricking,Kufu,Roidder"><link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css"><link rel="stylesheet" href="/css/index.css"><link rel="icon" href="/images/favicon.ico"><link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css"><title>module?</title><meta name="keywords" content="JS"><body><div class="container"><div class="nav"><ul><li class="item"><a href="/">🙄️</a></li><li class="item"><a href="/archives">一篇诗</a></li><li class="item"><a href="/category">一壶酒</a></li><li class="item"><a href="/tags/">一曲长歌</a></li><li class="item"><a href="/about/">一剑天涯</a></li></ul></div><article><header><h1 class="title">module?</h1><i class="icon-calendar"></i><span>2017.10.15 | 21:32:00</span></header><div class="content"><hr>
+<h1 id="require-是-CommonJS-规范"><a href="#require-是-CommonJS-规范" class="headerlink" title="require: 是 CommonJS 规范"></a>require: 是 CommonJS 规范</h1><ul>
+<li>CommonJS 规范是为了解决js的作用域问题而定义的模块形式，可以使每个模块它自身的命名空间中执行，该规范的主要内容是：<ul>
+<li><code>模块必须通过module.exports抛出对外的变量或接口</code>，通过require（）来导入其他模块的输出到当前模块作用域中。</li>
+<li><code>CommonJs</code>是同步加载模块，也有浏览器端的实现，其原理是将所有的模块都定义好，并通过ID索引，然后在浏览器环境中解析。</li>
+</ul>
+</li>
+</ul>
+<h2 id="exports-amp-module-exports"><a href="#exports-amp-module-exports" class="headerlink" title="exports &amp; module.exports"></a>exports &amp; module.exports</h2><blockquote>
+<p>exports 和 module.exports占据同一块内存区域<br>模块最后以 module.exports 导出，然后用require导入。<br>所以，此处可能会有一类改变地址的操作例如 exports = null，最后导出都不会生效，以module.exports为准。</p>
+</blockquote>
+<h1 id="import-ESMAScript规范-ES6"><a href="#import-ESMAScript规范-ES6" class="headerlink" title="import: ESMAScript规范, ES6+"></a>import: ESMAScript规范, ES6+</h1><p>ES6 模块的设计思想，<code>是尽量的静态化</code>，使得编译时就能确定模块的依赖关系，以及输入和输出的变量。<br> <code>CommonJS 和 AMD 模块，都只能在运行时确定这些东西</code>。<br>比如，CommonJS 模块就是对象，输入时必须查找对象属性。<br>ES6 “编译时加载”或者静态加载，即可以在编译时就完成模块加载，效率要比 CommonJS 模块的加载方式高。</p>
+<ul>
+<li><code>ES6 的模块自动采用严格模式</code>，不管你有没有在模块头部加上”use strict”;</li>
+<li><code>import语句是 Singleton 模式。</code></li>
+<li>import()函数可以用在任何地方，不仅仅是模块，非模块的脚本也可以使用。<br>它是运行时执行，也就是说，什么时候运行到这一句，也会加载指定的模块。另外，import()函数与所加载的模块没有静态连接关系，这点也是与import语句不相同。import()类似于 Node 的require方法，区别主要是<code>前者是异步加载，后者是同步加载。</code></li>
+</ul>
+<h2 id="export-amp-export-default"><a href="#export-amp-export-default" class="headerlink" title="export &amp; export default"></a>export &amp; export default</h2><ul>
+<li>两者都可导出常量、函数、文件、模块等</li>
+<li>export 可以有多个，export default仅有一个</li>
+<li>通过export方式导出，在导入时要加{ }，export default则不需要</li>
+<li>export能直接导出变量表达式，export default不可以。</li>
+</ul>
+<blockquote>
+<p>import/require加载node_modules依赖时，如果文件目录下有 package.json，就根据它的 main 字段找到 js 文件。如果没有 package.json，那就默认取文件夹下的 index.js。</p>
+</blockquote>
+</div></article><div id="disqus_thread"></div><script>var disqus_config = function () {
+  this.page.url = "https://nunchakus888.github.io/2017/10/15/IT-2017-2017-10-15-module/";
+  this.page.identifier = "2017/10/15/IT-2017-2017-10-15-module/";
+};
+
+(function () {
+  var d = document, s = d.createElement('script');
+  s.src = 'https://Roidder.disqus.com/embed.js';
+  s.setAttribute('data-timestamp', +new Date());
+  (d.head || d.body).appendChild(s);
+})();</script></div></body></head></html>

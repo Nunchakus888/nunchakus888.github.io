@@ -1,0 +1,21 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge, chrome=1"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta name="keywords" content="Javascript,Nunchakus,Tricking,Kufu,Roidder"><link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css"><link rel="stylesheet" href="/css/index.css"><link rel="icon" href="/images/favicon.ico"><link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css"><title>github提交不计入contributions</title><meta name="keywords" content="Git"><body><div class="container"><div class="nav"><ul><li class="item"><a href="/">🙄️</a></li><li class="item"><a href="/archives">一篇诗</a></li><li class="item"><a href="/category">一壶酒</a></li><li class="item"><a href="/tags/">一曲长歌</a></li><li class="item"><a href="/about/">一剑天涯</a></li></ul></div><article><header><h1 class="title">github提交不计入contributions</h1><i class="icon-calendar"></i><span>2017.10.29 | 00:40:00</span></header><div class="content"><hr>
+<blockquote>
+<p>首先我是有记录的习惯的，本来是打算完完整整的建设一个自己的技术博客<br>，结果写着写着写成了生活随笔😄，五花八门😄。<br>毕竟，一切都源于生活嘛😄，那就这样好咯。</p>
+</blockquote>
+<p>好一段时间github不记录我的提交记录了，这个很是惆怅，<br>然后看官方记录规则大概了解到：<br>本地提交用户需要与github账号用户一致，就是email，</p>
+<p>(在项目中查看提交记录可看到你机器设置的git用户名)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">git log</span><br><span class="line"></span><br><span class="line">显示如下：</span><br><span class="line">commit 6f642a246062550cd90cf80d7faa332a5ec23b68 (HEAD -&gt; master, origin/master, origin/HEAD)</span><br><span class="line">Author: XXXXXXX &lt;XXXXXXX@gmail.com&gt;</span><br><span class="line">Date:   Sat Oct 28 22:02:04 2017 +0800</span><br></pre></td></tr></table></figure></p>
+<p>然后就改改回来～～<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config -–global user.name &quot;Neo&quot; </span><br><span class="line">git config -–global user.email &quot;hello.world@gmail.com&quot;</span><br></pre></td></tr></table></figure></p>
+<p>更改完后可通过 </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git config --list 查看</span><br></pre></td></tr></table></figure>
+<p>其他的几个不会触发记录contribution的要点我们一般不会触及到。<br>详细🔎可查阅 <a href="https://help.github.com/articles/why-are-my-contributions-not-showing-up-on-my-profile/" target="_blank" rel="noopener">Learn how we count contributors</a></p>
+</div></article><div id="disqus_thread"></div><script>var disqus_config = function () {
+  this.page.url = "https://nunchakus888.github.io/2017/10/29/IT-2017-2017-10-28-为什么我的github提交不计入contribution/";
+  this.page.identifier = "2017/10/29/IT-2017-2017-10-28-为什么我的github提交不计入contribution/";
+};
+
+(function () {
+  var d = document, s = d.createElement('script');
+  s.src = 'https://Roidder.disqus.com/embed.js';
+  s.setAttribute('data-timestamp', +new Date());
+  (d.head || d.body).appendChild(s);
+})();</script></div></body></head></html>

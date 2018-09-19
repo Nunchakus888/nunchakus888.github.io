@@ -1,0 +1,54 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge, chrome=1"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta name="keywords" content="Javascript,Nunchakus,Tricking,Kufu,Roidder"><link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css"><link rel="stylesheet" href="/css/index.css"><link rel="icon" href="/images/favicon.ico"><link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css"><title>React浅尝～</title><meta name="keywords" content="JS"><body><div class="container"><div class="nav"><ul><li class="item"><a href="/">🙄️</a></li><li class="item"><a href="/archives">一篇诗</a></li><li class="item"><a href="/category">一壶酒</a></li><li class="item"><a href="/tags/">一曲长歌</a></li><li class="item"><a href="/about/">一剑天涯</a></li></ul></div><article><header><h1 class="title">React浅尝～</h1><i class="icon-calendar"></i><span>2017.06.10 | 00:00:00</span></header><div class="content"><hr>
+<h3 id="Notes"><a href="#Notes" class="headerlink" title="Notes.."></a>Notes..</h3><ul>
+<li><p>state :</p>
+<ul>
+<li>组件状态, 控制UI</li>
+<li>在组件内部初始化，只能被自身修改，外部不可见</li>
+<li>state 中状态可以通过 this.setState(由父类 Component提供) 方法进行更新，setState 会导致组件的重新渲染。</li>
+</ul>
+</li>
+<li><p>props : 组件属性</p>
+<ul>
+<li>props一旦传入，不可以在组件内部对它进行修改。该组件的父组件可以传入参数来配置该组件</li>
+<li>使用组件时把参数放在标签的属性当中，所有的属性都会作为 props 对象的键值：</li>
+<li>可以通过给组件添加类属性 defaultProps 来配置默认参数。</li>
+<li>父组件重新渲染会传入新的 props 以及更新。</li>
+<li><em>使用自定义组件的时候，可以在其中嵌套 JSX 结构。嵌套的结构在组件内部都可以通过 props.children 获取到</em><h5 id="state是让组件控制自己的状态，props是让外部对组件自己进行配置。"><a href="#state是让组件控制自己的状态，props是让外部对组件自己进行配置。" class="headerlink" title="state是让组件控制自己的状态，props是让外部对组件自己进行配置。"></a>state是让组件控制自己的状态，props是让外部对组件自己进行配置。</h5></li>
+</ul>
+</li>
+<li><p>钩子函数</p>
+<ul>
+<li>componentWillMount ：组件挂载开始之前，也就是在组件调用 render 方法之前调用。(一些组件启动的动作，包括像 Ajax 数据的拉取操作、一些定时器的启动等可以放在componentWillMount里面处理。)</li>
+<li>componentDidMount：组件挂载完成以后，也就是 DOM 元素已经插入页面后调用。(有些组件的启动工作是依赖 DOM 的，例如动画的启动，而 componentWillMount 的时候组件还没挂载完成，所以没法进行这些启动工作，这时候就可以把这些操作放在 componentDidMount 当中)</li>
+<li>componentWillUnmount：组件对应的 DOM 元素从页面中删除之前调用。</li>
+<li>shouldComponentUpdate(nextProps, nextState)：你可以通过这个方法控制组件是否重新渲染。如果返回 false 组件就不会重新渲染。这个生命周期在 React.js 性能优化上非常有用。</li>
+<li>componentWillReceiveProps(nextProps)：组件从父组件接收到新的 props 之前调用。</li>
+<li>componentWillUpdate()：组件开始重新渲染之前调用。</li>
+<li>componentDidUpdate()：组件重新渲染并且把更改变更到真实的 DOM 以后调用。</li>
+</ul>
+</li>
+</ul>
+<h6 id="abcdefg……"><a href="#abcdefg……" class="headerlink" title="abcdefg……"></a>abcdefg……</h6><ul>
+<li>React.js 当中提供了 ref 属性 我们可以给任意代表 HTML 元素标签加上 ref 从而获取到它 DOM 元素然后调用 DOM API。但是记住一个原则：能不用 ref 就不用</li>
+<li>也可以给组件标签也加上 ref</li>
+<li>通过 PropTypes 给组件的参数做类型限制</li>
+<li><p>高阶组件就是一个函数，传给它一个组件，它返回一个新的组件。新的组件使用传入的组件作为子组件。</p>
+</li>
+<li><p>组件常用编写规范</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">** static 开头的类属性，如 defaultProps、propTypes。</span><br><span class="line">** 构造函数，constructor。</span><br><span class="line">** getter/setter（还不了解的同学可以暂时忽略）。</span><br><span class="line">** 组件生命周期。</span><br><span class="line">** _ 开头的私有方法。</span><br><span class="line">** 事件监听方法，handle*。</span><br><span class="line">** render*开头的方法，有时候 render() 方法里面的内容会分开到不同函数里面进行，这些函数都以 render* 开头。</span><br><span class="line">** render() 方法。</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h5 id="Redux-amp-React-Redux"><a href="#Redux-amp-React-Redux" class="headerlink" title="Redux &amp; React-Redux"></a>Redux &amp; React-Redux</h5><ul>
+<li>Redux 是一种架构模式（Flux 架构的一种变种），它不关注你到底用什么库，你可以把它应用到 React 和 Vue，甚至跟 jQuery 结合都没有问题。<br>而 React-redux 就是把 Redux 这种架构模式和 React.js 结合起来的一个库，就是 Redux 架构在 React.js 中的体现。</li>
+</ul>
+</div></article><div id="disqus_thread"></div><script>var disqus_config = function () {
+  this.page.url = "https://nunchakus888.github.io/2017/06/10/IT-2017-2017-06-10-react-notes/";
+  this.page.identifier = "2017/06/10/IT-2017-2017-06-10-react-notes/";
+};
+
+(function () {
+  var d = document, s = d.createElement('script');
+  s.src = 'https://Roidder.disqus.com/embed.js';
+  s.setAttribute('data-timestamp', +new Date());
+  (d.head || d.body).appendChild(s);
+})();</script></div></body></head></html>
