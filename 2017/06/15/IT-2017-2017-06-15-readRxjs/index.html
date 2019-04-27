@@ -8,14 +8,4 @@
 <p>OMG, 没看错, unsubscribe, 这里就是用来取消订阅的, 任何传给Observable构造函数的Observe对象都将在这里取消观察订阅, 那这个Observable到底做了什么呢?加subscribe添加订阅, 同时又在结尾取消订阅..</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">export interface Observer&lt;T&gt; &#123;</span><br><span class="line">    closed?: boolean;</span><br><span class="line">    next: (value: T) =&gt; void;</span><br><span class="line">    error: (err: any) =&gt; void;</span><br><span class="line">    complete: () =&gt; void;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>To bo continued…</p>
-</div></article><div id="disqus_thread"></div><script>var disqus_config = function () {
-  this.page.url = "https://nunchakus888.github.io/2017/06/15/IT-2017-2017-06-15-readRxjs/";
-  this.page.identifier = "2017/06/15/IT-2017-2017-06-15-readRxjs/";
-};
-
-(function () {
-  var d = document, s = d.createElement('script');
-  s.src = 'https://Roidder.disqus.com/embed.js';
-  s.setAttribute('data-timestamp', +new Date());
-  (d.head || d.body).appendChild(s);
-})();</script></div></body></html>
+</div></article></div></body></html>
